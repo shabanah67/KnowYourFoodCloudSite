@@ -1,0 +1,150 @@
+﻿@{
+    Layout = null;
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, intial-scale=1.0" />
+    <title>Know Your Food</title>
+    <link href="/css/styles.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/714e7707f1.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar_Container">
+            <a href="index.html" id="navbar_logo"><i class="fa-solid fa-burger"></i> Know Your Food</a>
+            <div class="navbar_toggle" id="mobile_menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar_menu">
+                <li class="navbar_item">
+                    <a href='@Url.Action("Index", "Home" )' class="navbar_links">
+                        Home
+                    </a>
+                </li>
+                <li class="navbar_item">
+                    <a href='@Url.Action("food", "Home" )' class="navbar_links">
+                        Food
+                    </a>
+                </li>
+                <li class="navbar_item">
+                    <a href='@Url.Action("Recipie", "Home" )' class="navbar_links">
+                        Recipies
+                    </a>
+                </li>
+                <li class="navbar_item">
+                    <a href='@Url.Action("Component", "Home" )' class="navbar_links">
+                        Components
+                    </a>
+                </li>
+                <li class="navbar_item">
+                    <a href='@Url.Action("AboutUs", "Home" )' class="navbar_links">
+                        About Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="main">
+        <h1 style="color: #ff8177;text-align:center;">Find Food Based On Components</h1>
+        <h3 style="color: white; text-align: center; padding: 2rem;">Get Food item based on component to empower you to create a better diet. Type in component to see the Food and value. Note- search for calcium, protein,zinc for result and any other items for no result.</h3>
+        <div class="box ">
+
+            <div class="search-box">
+
+                <input id="componentInput" type="text" placeholder="calcium,protein,zinc..." />
+                <label for="" class="icon">
+                    <button id="componentBtn" class="fa-solid fa-search"></button>
+                </label>
+            </div>
+
+        </div>
+        <table id="Componenttb" style="width:80%;margin:auto;">
+            <thead>
+                <tr id="record">
+                    <th>Food</th>
+                    <th>Daily Value</th>
+                </tr>
+
+            </thead>
+            <tbody style="color:white" id="ComponentData">
+            </tbody>
+        </table>
+        <h3 id="norecord" style="color: white; text-align: center;display:none; padding: 2rem;">No Record Found</h3>
+    </div>
+
+    <!--footer section-->
+    <div class="footer_Container">
+        <div class="footer_link">
+            <div class="footer_link_wrapper">
+                <div class="footer_link_items">
+                    <h2>About Us</h2>
+                    <a href="">How It Works</a>
+                    <a href="">Testimonials</a>
+                    <a href="">Carrers</a>
+                    <a href="">Terms of Service</a>
+                </div>
+                <div class="footer_link_items">
+                    <h2>Contact Us</h2>
+                    <a href="">Contact</a>
+                    <a href="">Destination</a>
+                    <a href="">Sponsorships</a>
+                    <a href="">Support</a>
+
+                </div>
+            </div>
+            <div class="footer_link_wrapper">
+                <div class="footer_link_items">
+                    <h2>Videos</h2>
+                    <a href="">Submit Videos</a>
+                    <a href="">Agency</a>
+                    <a href="">Influencer</a>
+                    <a href="">Ambassador</a>
+
+                </div>
+                <div class="footer_link_items">
+                    <h2>Social Media</h2>
+                    <a href="">Facebook</a>
+                    <a href="">Instagram</a>
+                    <a href="">Youtube</a>
+                    <a href="">Twitter</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="social_media">
+            <div class="social_media_wrap">
+                <div class="footer_logo">
+                    <a href="" id="footer_logo"><i class="fa-solid fa-burger"></i>Know Your Food</a>
+
+                </div>
+                <p class="website_right">@@Know Your Food 2022. All Right Reserved</p>
+                <div class="social_icons">
+                    <a href="" class="social_icon_link" target="_blank">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="" class="social_icon_link" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="" class="social_icon_link" target="_blank">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="" class="social_icon_link" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="" class="social_icon_link" target="_blank">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/component.js"></script>
+</body>
+</html>
