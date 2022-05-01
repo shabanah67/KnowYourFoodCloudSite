@@ -40,9 +40,9 @@ namespace DataGov_API_Intro.Controllers
 
             //string NATIONAL_PARK_API_PATH = BASE_URL + "/parks?limit=20";
             string NATIONAL_FOOD_API_PATH = BASE_URL + "/foods/search?limit=20";
-            string parksData = "";
+            string FData = "";
 
-            Parks parks = null;
+            Food Food = null;
 
             httpClient.BaseAddress = new Uri(NATIONAL_FOOD_API_PATH);
             //httpClient.BaseAddress = new Uri(BASE_URL);
@@ -58,16 +58,16 @@ namespace DataGov_API_Intro.Controllers
 
                 if (response.IsSuccessStatusCode)
                 {
-                    parksData = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+                    FData = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
                 }
 
-                if (!parksData.Equals(""))
+                if (!FData.Equals(""))
                 {
                     //JsonConvert is part of the NewtonSoft.Json Nuget package
-                    parks = JsonConvert.DeserializeObject<Parks>(parksData);
+                    Food = JsonConvert.DeserializeObject<FoodModel>(FData);
                 }
 
-                dbContext.Parks.Add(parks);
+                dbContext.Food.Add(Food);
                 await dbContext.SaveChangesAsync();
             }
             catch (Exception e)
@@ -76,7 +76,7 @@ namespace DataGov_API_Intro.Controllers
                 Console.WriteLine(e.Message);
             }
 
-            return View(parks);
+            return View(Food);
         }
         public ActionResult food()
         {
